@@ -1,0 +1,38 @@
+# Nmap 7.98 scan initiated Mon Sep 22 18:08:10 2025 as: nmap -oN open_port.txt sS 192.168.1.0/24
+Failed to resolve "sS".
+Nmap scan report for 192.168.1.1
+Host is up (0.026s latency).
+Not shown: 994 closed tcp ports (reset)
+PORT    STATE SERVICE
+21/tcp  open  ftp
+22/tcp  open  ssh
+23/tcp  open  telnet
+53/tcp  open  domain
+80/tcp  open  http
+443/tcp open  https
+MAC Address: 4C:AE:1C:1B:D7:10 (SaiNXT Technologies LLP)
+
+Nmap scan report for 192.168.1.3
+Host is up (0.023s latency).
+All 1000 scanned ports on 192.168.1.3 are in ignored states.
+Not shown: 1000 closed tcp ports (reset)
+MAC Address: E2:76:15:A7:8C:9E (Unknown)
+
+Nmap scan report for 192.168.1.4
+Host is up (0.029s latency).
+All 1000 scanned ports on 192.168.1.4 are in ignored states.
+Not shown: 1000 closed tcp ports (reset)
+MAC Address: DE:DD:6D:23:45:14 (Unknown)
+
+Nmap scan report for 192.168.1.2
+Host is up (0.00057s latency).
+Not shown: 994 closed tcp ports (reset)
+PORT     STATE SERVICE
+80/tcp   open  http
+135/tcp  open  msrpc
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+4343/tcp open  unicall
+4449/tcp open  privatewire
+
+# Nmap done at Mon Sep 22 18:08:25 2025 -- 256 IP addresses (4 hosts up) scanned in 15.36 seconds
