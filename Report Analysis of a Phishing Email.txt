@@ -1,0 +1,27 @@
+Report: Analysis of a Phishing Email Sample
+
+1. Sender's Email Address:
+
+The sender's email address is support@micrsoft-update.com. This is a classic example of "typosquatting," where the domain name is intentionally misspelled to look like a legitimate company's name. The legitimate Microsoft domain is microsoft.com, not micrsoft-update.com. This is a major red flag for spoofing.
+
+2. Email Headers:
+
+I used an online header analyzer to examine the email's headers. The following discrepancies were found:
+Received-From IP Address: The IP address 104.130.122.99 is located in a different country (The Netherlands) than the supposed sender's location. This geographic mismatch is highly suspicious.
+Return-Path: The Return-Path header, which indicates where bounced emails should be sent, is bounce@example-phish.net. This is a different domain from the sender's address, indicating that the email did not originate from the purported "Microsoft" server.
+
+3. Suspicious Links or Attachments:
+
+The email body contains a link that reads "Verify Your Account." When I hovered over the link, the actual URL was http://onlinedocs-verification.net/login.html. This is a clear case of a mismatched URL. The visible text suggests a legitimate Microsoft service, but the underlying link directs to a completely different, unknown domain. There were no attachments in this email sample.
+
+4. Urgent or Threatening Language:
+
+The email body is titled "Immediate Action Required: Your Microsoft Account will be Suspended." The body itself contains urgent and threatening language, stating, "Your account has been flagged for unusual activity and will be suspended within 24 hours if no action is taken." This is a common tactic used by phishers to create a sense of panic and urgency, pressuring the recipient to act without thinking.
+
+5. Spelling and Grammar Errors:
+
+The email contains several subtle grammar and punctuation errors, which are common in phishing attempts. For example:
+
+"Your account has been flagged for unusual activity and will be suspended within 24 hours if no action is taken." - The sentence is grammatically correct but uses a slightly unnatural phrasing for a formal communication.
+
+"Click on the link below to verify your account and avoid permanent suspension." - The use of "permanent suspension" is a strong but unnecessary word choice for a standard account alert.
