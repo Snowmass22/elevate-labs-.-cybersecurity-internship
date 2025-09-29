@@ -1,0 +1,31 @@
+i have used nmap for scaning my system's vulnerability cause it is easy with nmap
+
+
+Vulnerability Scan Findings (Nmap with vuln script)
+The scan focused on 192.168.1.2 and found several open ports and ran vulnerability scripts against them. Here are the key findings from the nmap -sV --script=vuln command:
+
+1. Open Ports and Services
+The scan identified the following services running on your PC:
+
+Port/Protocol	State	Service	Version/Description
+80/tcp	open	http	Microsoft IIS HTTPD 10.0 (Microsoft IIS/10.0)
+135/tcp	open	msrpc	Microsoft Windows RPC
+139/tcp	open	netbios-ssn	Microsoft Windows netbios-ssn
+445/tcp	open	microsoft-ds	Microsoft Windows netbios-ssn
+4343/tcp	open	ssl/unicali?	(Unknown service over SSL)
+4449/tcp	open	ssl/privatewire?	(Unknown service over SSL)
+
+2. Specific Vulnerability Script Results
+The Nmap Scripting Engine (NSE) scripts from the vuln category found the following (Note: The scripts listed check for specific, well-known vulnerabilities, but their results often need manual confirmation):
+
+Finding	Status	Severity	Mitigation/Action
+HTTP Cross-Site Scripting (XSS) Checks	Not Found	Low	Scripts http-dombased-xss and http-stored-xss did not find these specific vulnerabilities.
+HTTP Cross-Site Request Forgery (CSRF) Checks	Not Found	Low	Script http-csrf couldn't find any CSRF vulnerabilities.
+smb-vuln-ms10-054	false	Medium	The script reported false, indicating the system is likely NOT vulnerable to this specific Samba/SMB vulnerability.
+smb-vuln-cve-2012-1182	ERROR	High/Critical	The script reported an ERROR ("Could not negotiate a connection"). This means the script failed to complete the check, so the vulnerability status is unknown. This needs manual investigation.
+smb-vuln-ms10-061	ERROR	High/Critical	The script reported an ERROR ("Could not negotiate a connection"). The vulnerability status is unknown. This needs manual investigation.
+
+3. Most Critical Potential Issue
+The most significant finding is that Microsoft IIS HTTPD 10.0 is running on port 80. While the Nmap script did not confirm any specific web application vulnerabilities, running a web server on your local machine means the server itself, and any websites hosted on it, should be kept fully patched and securely configured.
+
+The errors on the SMB vulnerability checks for ports 139/445 are also critical, as these are common vectors for network attacks. The errors suggest the Nmap scripts were blocked or failed to communicate correctly.
